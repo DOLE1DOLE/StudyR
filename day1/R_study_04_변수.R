@@ -61,3 +61,7 @@ salt<-10  #mg
 water<-100 #ml
 result<-(salt/(salt+water))*100
 cat('소금=',salt,'mg,','물=',water,'ml : 농도 =', result,'%')
+
+`df
+print(a)  ## 못빠져나감-콘솔창에서 esc해서 도망가
+
