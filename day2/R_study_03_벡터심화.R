@@ -55,3 +55,36 @@ sum(d[d>5])  #5보다 큰애들 합
 d>5&d<8
 condi<-d>5&d<8
 d[condi]
+
+
+##LAB 연습문제 카페매출액분석
+espresso<-c(4,5,3,6,5,4,7)
+americano<-c(63,68,64,68,72,89,94)
+latte<-c(61,70,59,71,71,92,88)
+price<-c(2000,2500,3000)
+names(price)<-c('esp','ame','lat')
+price
+sale.espresso<-price['esp']*espresso
+sale.espresso
+sale.americano<-price['ame']*americano
+sale.americano
+sale.latte<-price['lat']*latte
+sale.latte
+
+sale.day<-sale.espresso+sale.americano+sale.latte
+sale.day
+names(sale.day)<-c('Mon','Tue','Wed','Thu','Fri','Sat','Sun')
+total<-sum(sale.day)
+total
+cat('총매출액',total,'원')
+avg<-mean(sale.day)
+
+
+avg
+cat('평균매출액',avg,'원')
+result<-names(sale.day[sale.day>=avg])
+cat('평균매출액보다 매출액이 높은 요일은',result)
+
+cat('총매출액',total,'원')
+cat('평균매출액',avg,'원')
+cat('평균매출액보다 매출액이 높은 요일은',result)
