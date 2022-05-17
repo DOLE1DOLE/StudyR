@@ -1,0 +1,19 @@
+dt<-readxl::read_excel(file.choose())
+dt
+str(dt)
+lan<-dt$G181DPMT_N
+lan
+age<-dt$G181AGE
+
+dt$G181A122
+head(lan)
+new<-cbind(lan,age)
+table(new)
+table(lan)
+lan['중국어','일본어']
+as.numeric(lan)
+pie(table(lan),
+    radius=1.5)
+max(lan)
+min(lan)
+pie(lan)
