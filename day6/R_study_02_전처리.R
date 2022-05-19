@@ -74,3 +74,66 @@ colMeans(tmp)
 
 tmp.asia<-subset(UN, region=='Asia')
 mean(tmp.asia$fertility)  #결측값 없어 계산잘됨
+
+
+## 정렬
+v1<-c(1,7,6,8,4,2,3,9)
+v1
+sort(v1, decreasing = T)
+
+name<-c('정대일','강재구','신현석','홍길동')
+sort(name, decreasing = T)
+
+idx<-order(name,decreasing = T)
+idx
+name[idx[1]]
+name[idx[4]]
+
+a <- c(1,2,3,4,5)
+b <- c(11,24,55,23,9)
+z<-rbind(a,b)
+z
+str(z)
+colnames(z)<-c('c1','c2','c3','c4','c5')
+z
+z[,1]
+
+
+## 데이터프레임 정렬
+
+sort(iris$Sepal.Length)
+
+sl.order<-order(iris$Sepal.Length)
+iris[sl.order,]
+iris.new<-iris[sl.order,]
+
+# 정렬 기준 2개일때
+iris.ag<-iris[order(iris$Species,iris$Petal.Length,
+                    decreasing = T),]
+
+## LAB 고속도로 교통사고 데이터
+library(carData)
+str(Highway1)
+levels(Highway1$htype)
+
+Highway1[order(Highway1$rate, decreasing = T),]
+
+#구간의 길이(len)가 가장 긴 상위 10개 구간의 총 길이
+#내림차순정렬부터
+tmp<-Highway1[order(Highway1$len, decreasing = T), 'len']
+tmp
+sum(tmp[1:10])
+#위와같은결과
+tmp.2<-sort(Highway1$len, decreasing = T)
+sum(tmp.2[1:10])
+
+#일일 교통량(adt)이 적은 하위 10개 구간의 일일 교통량(adt), 사고율
+
+tmp<- Highway1[order(Highway1$adt), c('adt','rate')]
+tmp[1:10,]
+
+tmp<-Highway1[order(Highway1$slim, decreasing = T),
+              c('len','adt','rate')]
+tmp
+tmp[1:5,]
+
