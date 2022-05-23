@@ -53,9 +53,9 @@ d[d>5]
 sum(d>5)  # true 개수 합을 내놓는다
 sum(d[d>5])  #5보다 큰애들 합
 d>5&d<8
-condi<-d>5&d<8
-d[condi]
-
+condi<-d>5&d<8   #조건!을 변수에 저장
+d[condi]    # 조건에 해당하는 값 출력
+d[d>5&d<8]
 
 ##LAB 연습문제 카페매출액분석
 espresso<-c(4,5,3,6,5,4,7)

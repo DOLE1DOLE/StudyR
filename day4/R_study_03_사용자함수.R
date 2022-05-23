@@ -20,7 +20,7 @@ result<-determine(score)
 source('LAB_determine.R')  # 결과 안나올때 함수 가져오기?
 result
 
-## 조건에 맞는 데이터 위치 리턴 함수
+## 조건에 맞는 데이터 위치(인덱스) 리턴 함수
 score.two<-c(76, 84, 69, 50, 95, 60, 82, 71, 88, 84)
 score.two
 which(score.two==69)
@@ -128,10 +128,40 @@ avg.n<-mean(tips[idx,'tip'])
 avg.s
 avg.n
 
-source('./day4/myFunc.R')
+getwd()
+source('./myFunc.R')
 meanbycol.tip('sex')
 meanbycol.tip('smoker')
 meanbycol.tip('size')
 meanbycol.tip('day')
-  ##9번부터안함
-#categorize.tip<-function(tips)
+  
+categorize.tip<-function(tips){
+  tip_ratio <- tips$tip/tips$total_bill * 100
+  class <- c()
+  for(i in 1:nrow(tips)){
+    if(tip_ratio[i] < 10){
+      class[i] <- 1
+    }else if(tip_ratio[i] < 15){
+      class[i] <- 2
+    }else if(tip_ratio[i] < 20){
+      class[i] <- 3
+    }else{
+      class[i] <- 4
+    }
+  }
+  tips.new <- cbind(tips, type = class, ratio = tip_ratio)
+  return(tips.new)
+}
+source('myfunc.R')
+tips.new <- categorize.tip(tips)
+head(tips.new)
+
+res <- c()
+for(i in 1:4){
+  idx <- which(tips.new[,'type'] == i)
+  tips.tmp <- tips.new[idx, ]
+  res.tmp <- apply(tips.tmp[c('type', 'total_bill', 'tip', 'ratio')], 2, mean)
+  res <- rbind(res, res.tmp)
+  }
+rownames(res) <- 1:4
+res

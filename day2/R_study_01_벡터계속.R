@@ -40,6 +40,9 @@ deposit<-c(5000000,4500000,4000000,5500000,6000000)
 rate<-c(3.5,3.0,4.0,5.0,4.5)
 period<-c(2,2,5,7,4)
 
+z<-data.frame(customer,deposit,rate,period)###데이터프레임보고다시와
+z
+
 names(deposit)<-customer
 deposit
 names(rate)<-customer

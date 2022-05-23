@@ -2,11 +2,11 @@
 # if문
 job.type<- 'A'
 
-if (job.type=='B'){   # = 으로쓰면 에러남
+if (job.type=='B'){   
   bonus<-200
-} else {   #이대로 써야함 줄바꾸면에러
+} else {   
   bonus<-100
-}
+}   # if문 바깥에서 실행해야 한번에됨
 
 print(bonus)
 
@@ -100,7 +100,7 @@ mydiv<-function(x,y=2){
   return(result)
 }
 mydiv(10,3)
-mydiv(10)   # 디폴트y를 2로 잡았으니
+mydiv(10,0)   # 디폴트y를 2로 잡았으니
 
 myfunc<-function(x,y){
   val.sum<-x+y
@@ -113,6 +113,7 @@ result$sum
 result$mul
 
 
-## 내장함수 apply()
+## 내장함수 apply():apply(데이터셋, 행/열 방향 지정, 적용 함수)
+# 행방향 1 열방향 2
 apply(iris[,1:4],2,sd)  #mean,max,sum,sd....다됨
 

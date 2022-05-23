@@ -46,9 +46,9 @@ colnames(burger)<-c('열량(kcal)','나트륨(na)','포화지방(fat)')
 
 burger['McD','열량(kcal)']
 
-# 데이터프레임
+# 데이터프레임 은 2가지 이상의 자료형!(매트릭스는 동일 자료형)
 physicals<- matrix(c(168.4,169.5,62.4,65.5,'M','F'), nrow=2)
-physicals
+physicals  #자료형 다른데 다 문자화됨......
 
 city<- c('Seoul','Tokyo','Washington')
 rank<- c(1,3,2)
@@ -61,7 +61,8 @@ head(iris)  #처음일부데이터만출력
 tail(iris)  #끝데이터들
 str(iris)   #데이터타입 알려줌 str
 str(z)
-str(burger)
+str(burger)  #왜 매트릭스로안뜨지?????
+class(burger) #뜸
 str(c('Jon','Tom','Mark','Jane'))
 
 iris[140,]
@@ -71,7 +72,7 @@ iris[,c(1,2)]
 iris[,c('Sepal.Length','Petal.Length','Species')]
 
 head(iris[,c('Sepal.Length','Petal.Length','Species')])[1,]
-tail(iris[,c('Sepal.Length','Petal.Length','Species')])[1,3]
+head(iris[,c('Sepal.Length','Petal.Length','Species')])[1,3]
 
 
 ## LAB2 햄버거2

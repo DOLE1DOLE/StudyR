@@ -40,13 +40,13 @@ height.unit<-height/100
 bmi<-weight/(height.unit^2)
 bmi
 
-sink('bmi.txt', append=F)
-cat('height','weight','bmi','\n')  # \n을 따로 설정하면 결측값으로 읽어서 스캔에러남 ! 'bmi\n'으로 붙여쓸것 
+sink('bmi2.txt', append=F)
+cat('height','weight','bmi\n')  # \n을 따로 설정하면 결측값으로 읽어서 스캔에러남 ! 'bmi\n'으로 붙여쓸것 
 cat(height.unit*100, weight, bmi)
 cat('\n')
 sink()
 
-result<-read.table('bmi.txt', header = T, sep = ' ')  #결측값스캔에러는 fill=T로 해결 
+result<-read.table('bmi2.txt', header = T, sep = ' ')  #결측값스캔에러는 fill=T로 해결 
 result
 
 names(result)<-c('키','몸무게','체질량지수')

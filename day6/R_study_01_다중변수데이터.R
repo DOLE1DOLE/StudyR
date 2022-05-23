@@ -90,7 +90,7 @@ df
 point.color<-c('green','red')
 
 plot(df,
-     col=point.color[Hdma$deny],
-     
+     col=point.color[Hdma$deny]
      )
 cor(df)
+

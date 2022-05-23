@@ -5,6 +5,8 @@ Y
 Y<-C(1,2,3,4,)  #안됨
 y<-c(1,2,3,4,NA,5)
 sort(y)
+# x, decreasing은 매개변수, y와 T/F는 매개변수 값.
+# 아래는 정확한 명령문
 sort(x=y, decreasing= T)    #NA값은 무시하고 정렬
 sort(x=y, decreasing= F)
 sort(x=y, decreasing= F, na.last=T)   #결측값 출력한다 제일 마지막에

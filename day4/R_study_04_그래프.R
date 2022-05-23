@@ -45,9 +45,9 @@ barplot(ds,
         horiz=T,
         las=1,
         xlab='억원',ylab='',
-        beside=T,
+        beside=T,   # 항목별로 따로 나눠줌
         legend.text = c('H&A','HE','MC','VS','BS'),
-        args.legend = list(x='topright', bty='n', inset=c(-0.2,0)))
+        args.legend = list(x='topright', bty='n', inset=c(-0.2,0))) #inset조정해야함 이상
 
 ## 히스토그램
 cars
@@ -79,3 +79,5 @@ hist(ds,
      col=color,
      border = '#457b9d'
      )
+color[3] <- '#1d3557'    #가장높은값 다른색으로 지정하기
+

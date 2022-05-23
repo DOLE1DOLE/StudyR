@@ -17,8 +17,8 @@ barplot(table(mtcars$gear),
 
 pie(table(mtcars$cyl),
     main='자동차 실린더',
-    col=topo.colors(3))
-
+    col=topo.colors(3),  #색 topo팔레트 사용
+    radius=1)
 par(mfrow=c(1,1), mar=c(5,4,4,2)+.1)  # 화면 복귀
 
 ## LAB

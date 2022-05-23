@@ -4,7 +4,7 @@ score<-c(68,95,83,76,90,80,85,91,82,70)
 mean(score) #평균
 score
 
-c<-51:80  #도 벡터터
+c<-51:80  #도 벡터
 c
 
 x<-c(1,2,3)   #values가 num
@@ -18,7 +18,7 @@ z
 y.1<-c('hello','world','!')
 y.1
 w<-c(1,2,'3','4',5)    # 부분만 다르게x 숫자 문자 섞여있으면 다 문자로 바뀜
-w  #문자 하나라도들어가면 문자로로
+w  #문자 하나라도들어가면 문자로
 w.1<-c('7',8)
 w.1
 v1<-50:90
@@ -33,7 +33,7 @@ v3
 v4<-seq(0.1,1.0,0.1)
 v4
 
-v4.date<-seq.Date('2021-01-01','2021-01-31',)
+v4.date<-seq.Date('2021-01-01','2021-01-31')
 
 v5<-rep(1,times=5)
 v5
@@ -43,7 +43,7 @@ v7<-rep(c(1,3,5),times=3)
 v7
 v8<-rep(seq(1,10,2),times=2)
 v8
-v9<-rep(c('a','b',3),each=4)
+v9<-rep(c('a','b',3),each=4)  # 각각 반복 each
 v9
 
 
@@ -53,7 +53,7 @@ absent
 names(absent)<-c('Mon','Tue','Wed','Thu','Fri')
 absent
 
-absent[0]  # 인덱스는 1부터 출발
+absent[0]  # 인덱스는 1부터 출발 0아닙니다 character(0) 나옴
 absent[1]
 absent[2]
 absent[6]  #에러x NA

@@ -23,13 +23,15 @@ pie3D(ds,
 )
 
 # 선그래프
+plot
 month = 1:12
 late = c(5,8,7,9,4,6,12,13,8,6,6,4)
 plot(month, late,  #x축, y축
      main='지각생 통계',
-     type='l',  # 숫자1아님   l,b,s,o
+     type='b',  # 숫자1아님   l,b,s,o
      lty=1,   #선 종류
      lwd=2,   # 선 굵기
+    
      xlab='월',ylab='지각생 수',
      )
 
@@ -96,10 +98,10 @@ target<-mtcars[vars]
 plot(target,
      main='다중 산점도')
 
-## iris
+## iris 그룹별로 색 주기
 iris.2<-iris[,3:4]
 levels(iris$Species)
-group<-as.numeric(iris$Species)
+group<-as.numeric(iris$Species)   #그룹별 색 줄 때 as.numeric!!!!!!
 iris.2
 color.3<-c('red','green','blue')
 plot(iris.2,
@@ -125,9 +127,10 @@ plot(tinting$it,tinting$csoa,
      col=color[group])
 
 group <- tinting$agegp
+group<-as.numeric(tinting$agegp)
 color <- c('red','blue') 
 plot(tinting$it,tinting$csoa,
- pch=group,
+ pch=c(group),
  col=color[group])
 
 

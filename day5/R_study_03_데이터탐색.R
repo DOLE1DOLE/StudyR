@@ -8,7 +8,7 @@ tData2<-TitanicSurvival
 room.class<-tData2$passengerClass
 str(room.class)
 tbl<-table(room.class)
-sum(tbl)
+sum(tbl)  #전체 탑승객수
 
 barplot(tbl,
         main='선실별 탑승객',
@@ -56,7 +56,7 @@ grads[idx]
 
 ## 74-79년 영국 폐질환 사망자 데이터
 getwd()
-ds<-read.csv('./day5/fdeaths.csv', header=T,
+ds<-read.csv('C:/STUDY/StudyR/day5/fdeaths.csv', header=T,
              row.names = 'year')
 ds
 

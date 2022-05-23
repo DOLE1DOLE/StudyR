@@ -54,7 +54,7 @@ comma(num.data)
 # 파일 입출력
 
 getwd()
-setwd()
+setwd('C:/STUDY/StudyR/day3')
 
 # csv 파일읽기
 air.quality<-read.csv('airquality.csv',header=F)  #header=F 첫줄이 제목 아닐때
@@ -64,7 +64,7 @@ str(air.quality)
 
 setosa.iris<-subset(iris,Species=='setosa')
 str(setosa.iris)
-write.csv(setosa.iris,'./day3/setosa_iris.csv', row.names=F)
+write.csv(setosa.iris,'./setosa_iris.csv', row.names=F)
 
 install.packages('xlsx')
 library(xlsx)

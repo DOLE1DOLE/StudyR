@@ -4,15 +4,15 @@ bt
 bt.new<-factor(bt)
 bt.new
 bt[5]
-bt.new[4] #1-6까진 나옴 7은 NA와 Levels출력
+bt.new[2] #1-6까진 나옴 7은 NA와 Levels출력
 levels(bt.new)  #함수levels는 소문자
-levels(bt)
+levels(bt)  #매트릭스의 levels는 없다
 as.integer(bt.new) #levels를 숫자인덱스로
-levels(bt.new)[4]
+levels(bt.new)[4]   #레벨은 1-4까지.순서대로. 5부턴 없ㄹ음
 levels(bt.new)[2]
 
 bt.new[7]<-'b'
-bt.new[7]<-'c' #levels에 없는 요인..NA로 추가됨
+bt.new[7]<-'c' #팩터->levels에 없는 요인..NA로 추가됨
 
 
 # 리스트  파이썬 딕셔너리같은것
@@ -35,7 +35,7 @@ americano = c(63,68,64,68,72,89,94),
 latte = c(61,70,59,71,71,92,88),
 price = c(2000,2500,3000),
 menu = c('espresso','americano','latte'))
-cafe  #살려줘
+cafe  
 
 cafe$menu<-factor(cafe$menu)
 cafe$menu
